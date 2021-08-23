@@ -8,6 +8,10 @@ Console.WriteLine();
 MooseSays("H I, I'M  E N T H U S I A S T I C !");
 MooseSays("I really am enthusiastic");
 
+// As a question
+bool isTrue = MooseAsks("Is Canada real?");
+Console.WriteLine(isTrue);
+
 
 void MooseSays(string message)
 {
@@ -41,3 +45,28 @@ void MooseSays(string message)
     ");
 }
 
+bool MooseAsks(string question)
+{
+    Console.Write($"{question} (Y/N): ");
+    string answer = Console.ReadLine().ToLower();
+
+    while (answer != "y" && answer != "n")
+    {
+        Console.Write($"{question} (Y/N): ");
+        answer = Console.ReadLine().ToLower();
+    }
+
+    if (answer == "y")
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+//1. you need to call mooseask in order for the question to exist. 
+//the question must be a yes or no question in order for the code to work.
+//when asked, the user may answer y/n therefore will provide the next lines...
+// if y = return true if anything else return false
